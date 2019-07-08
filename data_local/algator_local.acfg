@@ -1,0 +1,12 @@
+{
+  "Config" : {
+    "FamilyID"       : "F0",
+  	"ComputerID"     : "C0",
+  	
+  	"TaskServerName" : "",
+  	"TaskServerPort" : "",
+
+    "VMEP"               : "",
+    "VMEPClasspath"      : ""
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "Result":
+  { 
+    "ParameterOrder"   : ["Test", "Group", "N"],      
+    "IndicatorOrder"   : ["Tfirst", "Tmin", "Tavg", "Tmax", "Tsum", "Check"],     
+  
+    "Parameters":   [     
+      {
+       "Name":        "Test",             
+       "Description": "The name of the test", 
+       "Type":        "string",
+       "Meta":        {"Default": "Test"}             
+      },
+      {
+       "Name":        "Group",             
+       "Description": "The name of the group to which this test belongs", 
+       "Type":        "enum",
+       "Meta":        {"Values":["RND", "SORTED", "INVERSED"], "Default": "RND"}            
+      },
+      {
+       "Name":        "N",             
+       "Description": "The size of the test (number of elements to be sorted)", 
+       "Type":        "int",
+       "Meta":        {"Min":100, "Max": 200, "Step":5, "Default": 1000}      
+      }      
+    ],
+
+    "Indicators":   [ 
+      {
+       "Name"         : "Tfirst",             
+       "Description"  : "Sorting FIRST time",             
+       "Type"         : "timer",          
+       "Meta"         : {"ID" : 0, "STAT": "FIRST"}    
+      },
+    
+      {
+       "Name"         : "Tmax",             
+       "Description"  : "Sorting MAX time",             
+       "Type"         : "timer",          
+       "Meta"         : {"ID" : 0, "STAT": "MAX"}
+      },
+      {
+       "Name"        : "Tmin",             
+       "Description" : "Sorting MIN time",             
+       "Type"        : "timer",          
+       "Meta"        : {"ID" : 0, "STAT": "MIN"}        
+      },
+      {
+       "Name"         : "Tavg",             
+       "Description"  : "Sorting AVG time",             
+       "Type"         : "timer",          
+       "Meta"         : {"ID" : 0, "STAT": "AVG"}    
+      },
+      {
+       "Name"        : "Tsum",             
+       "Description" : "Sorting SUM  time",             
+       "Type"        : "timer",          
+       "Meta"        : {"ID" : 0, "STAT": "SUM"}    
+      },
+      {
+       "Name"        : "Check",             
+       "Description" : "The correctness of the algorithm (OK or NOK)", 
+       "Type"        : "string"       
+      }
+    ]
+  }
+}
+ 

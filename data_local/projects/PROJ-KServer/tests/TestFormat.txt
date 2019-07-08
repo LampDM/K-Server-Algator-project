@@ -1,0 +1,9 @@
+
+k - number of servers
+r - number of requests
+x - x size of field
+y - y size of field
+spostype - starting position of servers type
+reqstype - types of requests or rather mode of functioning
+
+name:k:r:x:y:spostype:reqstype:[ extra things depending on type]

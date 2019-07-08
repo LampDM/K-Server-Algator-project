@@ -1,0 +1,42 @@
+{
+  "Result":
+  { 
+    "ParameterOrder"   : ["N", "Group"],    	
+    "IndicatorOrder"   : ["TFirst", "Tmin", "Check"],    	
+  
+    "Parameters":   [	    
+      {
+       "Name":        "Group",             
+       "Description": "The name of the test group", 
+       "Type":        "enum",
+       "Meta":        {"Values":["RND"], "Default": "RND"}            
+      },
+      {
+       "Name":        "N",             
+       "Description": "The size of the matrices", 
+       "Type":        "int",
+       "Meta":        {"Default": 100}            
+      }
+    ],
+    "Indicators":   [     
+      {
+       "Name"        : "Tmin",             
+       "Description" : "Algorithm MIN time",             
+       "Type"        : "timer",          
+       "Meta"        : {"ID" : 0, "STAT": "MIN"}        
+      },
+      {
+       "Name"        : "TFirst",             
+       "Description" : "Algorithm First time",             
+       "Type"        : "timer",          
+       "Meta"        : {"ID" : 0, "STAT": "FIRST"}        
+      },      
+      {
+       "Name"        : "Check",             
+       "Description" : "The correctness of the algorithm (OK or NOK)", 
+       "Type"        : "string"       
+      }
+    ]
+  }
+}
+ 

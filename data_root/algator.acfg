@@ -1,0 +1,33 @@
+{
+  "Config" : {
+    "TaskServerName"   : "localhost",
+
+    "DatabaseServer"   : {
+      "Connection"     : "jdbc:mysql://127.0.0.1:3306",
+      "Database"       : "algator_example",
+      "Username"       : "algator",
+      "Password"       : ""
+    },
+
+    "ComputerFamilies"  : [
+      {
+      "FamilyID"    : "F0",
+      "Name"        : "TestComputer",
+      "Description" : "Computer used to test algorithms",
+      "Platform"    : "Windows 10",
+      "Hardware"    : "2,66GHz Intel Core 2Duo, 8GB DDR3",
+      "SystemType"  : "64",
+      "Computers"   : [
+          {
+          "ComputerID"   : "C0",
+          "FamilyID"     : "F0",
+          "Name"         : "mycomp",
+          "Description"  : "My computer",
+          "IP"           : "193.168.1.100",
+          "Capabilities" : ["AEE_EM", "AEE_CNT"]
+          }         
+        ]
+      }
+    ]
+  }
+}

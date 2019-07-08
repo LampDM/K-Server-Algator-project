@@ -1,0 +1,13 @@
+{
+  "TestSet": {
+    "Name"             : "TestSet3",
+
+    "ShortName"        : "TS3",
+    "Description"      : "Matrices of dimensions from 450 to 990",
+    "N"                : "55",
+    "TestRepeat"       : "5",
+    "TimeLimit"        : "10",
+
+    "TestSetDescHTML"  : "TestSet3.html"
+  }
+}

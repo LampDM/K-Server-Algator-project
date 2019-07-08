@@ -1,0 +1,4 @@
+test0:10:RND
+test1:10:FILE:numbers.rnd:5
+test3:5:INLINE:4 3 15 6 1 4
+test2:10:INVERSED
