@@ -9,7 +9,7 @@ public class GreedyAlgorithm extends KServerAbsAlgorithm {
     protected KServerOutput execute(KServerInput testCase) {
 
         // TODO: implement the algorithm that uses the input and generates the output
-        KServerOutput result = new KServerOutput("");
+        KServerOutput result = new KServerOutput("",testCase.ks,testCase.req);
 
         result.solution = execute(testCase.ks, testCase.req, testCase.x, testCase.y);
         return result;
@@ -18,7 +18,7 @@ public class GreedyAlgorithm extends KServerAbsAlgorithm {
     public String execute(int[][] servers, int[][] requests, int x, int y) {
         String solution = "";
         try {
-            KServerTools ks = new KServerTools(servers, requests, x, y);
+            Ks ks = new Ks(servers, requests, x, y);
             solution = ks.startGreedy();
         } catch (Exception e) {
 

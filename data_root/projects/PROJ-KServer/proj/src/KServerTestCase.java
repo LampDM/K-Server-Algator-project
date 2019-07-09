@@ -132,20 +132,17 @@ public class KServerTestCase extends AbstractTestCase {
 
         //Use indexes for solution format, so for example 0 means first servers, 1 means second etc.
         String optimal_solution = "";
+
         try {
-            KServerTools kst = new KServerTools(ks, req, x, y);
+            Ks kst = new Ks(ks, req, x, y);
             optimal_solution = kst.min_max_Offline();
         } catch (Exception e) {
             System.out.println(e);
             //TODO what happens if error?
         }
-        
-        Ks a = new Ks();
-        a.lolcat();
-        //TODO put all the shit in KServerTools into Ks class
-        //TODO make a function for indexes --> total distance travelled
-        kServerTestCase.setExpectedOutput(new KServerOutput(optimal_solution));
-        
+
+        kServerTestCase.setExpectedOutput(new KServerOutput(optimal_solution, ks, req));
+
         return kServerTestCase;
 
     }
