@@ -36,14 +36,15 @@ public class KServerOutput extends AbstractOutput {
                 return checkOK ? "OK" : "nOK";
             case "p":
                 // Solution/Optimal solution to get p-factor
-                double sol = KServerTools.distTravelled(kServerAlgorithmOutput.solution,kServerAlgorithmOutput.ks,kServerAlgorithmOutput.req);
-                double opt = KServerTools.distTravelled(kServerTestCase.getExpectedOutput().solution,kServerAlgorithmOutput.ks,kServerAlgorithmOutput.req);
-                
+                double sol = KServerTools.distTravelled(kServerAlgorithmOutput.solution, kServerAlgorithmOutput.ks, kServerAlgorithmOutput.req);
+                double opt = KServerTools.distTravelled(kServerTestCase.getExpectedOutput().solution, kServerAlgorithmOutput.ks, kServerAlgorithmOutput.req);
+
                 //In case the requests are perfectly where the servers are at the moment, then non optimal will be 0.0 aswell
-                if(opt == 0.0)
+                if (opt == 0.0) {
                     return 1.0;
-                
-                return sol/opt;
+                }
+
+                return sol / opt;
         }
 
         return null;

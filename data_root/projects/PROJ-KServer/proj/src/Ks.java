@@ -45,9 +45,15 @@ public class Ks implements Serializable {
 
     public char[][] cordnames;
     public Point[][] cordpoints;
-
+    
+    int x;
+    int y;
+    
     public Ks(int[][] servers, int[][] requests, int x, int y) throws FileNotFoundException {
-
+        
+        this.x = x;
+        this.y = y;
+        
         this.cordnames = new char[x][y];
         this.cordpoints = new Point[x][y];
 
@@ -99,11 +105,11 @@ public class Ks implements Serializable {
         return solutionToIndexes(solution, this.ks);
     }
 
-    //TODO fix WFA bug
+    //TODO fix WFA bug, when initial server pos and req pos are same function returns just 1 index sol
     public String startWFA() {
         String solution = "";
 
-        int xvrstica = binomial(121, ks.length).intValue();
+        int xvrstica = binomial(this.x * this.y, ks.length).intValue();
         int yvrstica = req.length;
         wfa_w = new double[xvrstica][yvrstica + 1];
         wfa_s = new String[xvrstica][yvrstica];
@@ -112,10 +118,9 @@ public class Ks implements Serializable {
         combc = 0;
 
         String starter = "";
-        long startTime = System.nanoTime();
 
-        for (int i = 0; i < 11; i++) {
-            for (int j = 0; j < 11; j++) {
+        for (int i = 0; i < this.x; i++) {
+            for (int j = 0; j < this.y; j++) {
                 starter += cordnames[i][j];
 
             }
@@ -185,7 +190,6 @@ public class Ks implements Serializable {
 
             combos = combos + " " + current;
         }
-        long estimatedTime = System.nanoTime() - startTime;
         //System.out.println("combos: " + combos);
         String[] combo_sequence = combos.split(" ");
 

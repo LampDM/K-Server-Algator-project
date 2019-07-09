@@ -11,25 +11,44 @@
       }
     ], 
 
-    "IndicatorOrder" : ["p" ,"Check"],
+    "IndicatorOrder" : ["Tfirst","Tmin","Tavg","Tmax","p" ,"Check"],
 	
     "Indicators":   [	    
       {
+       "Name"         : "Tfirst",             
+       "Description"  : "FIRST time",             
+       "Type"         : "timer",          
+       "Meta"         : {"ID" : 0, "STAT": "FIRST"}    
+      },
+    
+      {
+       "Name"         : "Tmax",             
+       "Description"  : "MAX time",             
+       "Type"         : "timer",          
+       "Meta"         : {"ID" : 0, "STAT": "MAX"}
+      },
+      {
        "Name"        : "Tmin",             
-       "Description" : "MIN time of execution",             
+       "Description" : "MIN time",             
        "Type"        : "timer",          
-       "Subtype"     : {"ID" : 0, "STAT": "MIN"}        
+       "Meta"        : {"ID" : 0, "STAT": "MIN"}        
+      },
+      {
+       "Name"         : "Tavg",             
+       "Description"  : "AVG time",             
+       "Type"         : "timer",          
+       "Meta"         : {"ID" : 0, "STAT": "AVG"}    
+      },
+      {
+       "Name"        : "Tsum",             
+       "Description" : "SUM time",             
+       "Type"        : "timer",          
+       "Meta"        : {"ID" : 0, "STAT": "SUM"}    
       },
       {
        "Name"        : "Check",             
        "Description" : "The correctness of the algorithm (OK or NOK)", 
        "Type"        : "string"       
-      },
-	  {
-	   "Name"         : "Tmax",             
-       "Description"  : "Sorting MAX time",             
-       "Type"         : "timer",          
-       "Meta"         : {"ID" : 0, "STAT": "MAX"}
       },
 	  {
 		"Name"       : "p",

@@ -1,7 +1,7 @@
 {"Project": {
   "Name": "KServer",
-  "Description": "short_project_description",
-  "Author": "author_name",
+  "Description": "The k-server problem is a problem of theoretical computer science in the category of online algorithms, one of two abstract problems on metric spaces that are central to the theory of competitive analysis (the other being metrical task systems). In this problem, an online algorithm must control the movement of a set of k servers, represented as points in a metric space, and handle requests that are also in the form of points in the space. As each request arrives, the algorithm must determine which server to move to the requested point. The goal of the algorithm is to keep the total distance all servers move small, relative to the total distance the servers could have moved by an optimal adversary who knows in advance the entire sequence of requests.",
+  "Author": "Danijel Maraz",
   "Date": "07, 2019",
   "Algorithms": [
     "Greedy",

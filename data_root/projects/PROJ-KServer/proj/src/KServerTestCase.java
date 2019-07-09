@@ -91,7 +91,7 @@ public class KServerTestCase extends AbstractTestCase {
         boolean[][] seen = new boolean[x][y];
 
         // Set initial server positions
-        switch (spostype) {
+        switch (sposTypeHandler(spostype)) {
             case "RANDOM":
                 // Servers start completely randomly
                 int posx = rand.nextInt(x);
@@ -108,13 +108,21 @@ public class KServerTestCase extends AbstractTestCase {
                     seen[posx][posy] = true;
                 }
                 break;
+            case "INLINE":
+                spostype = spostype.replaceAll("INLINE ", "");
+                String[] cords = spostype.split(" ");
+                for (int i = 0; i < cords.length; i++) {
+                    ks[i][0] = Integer.parseInt(cords[i].split(",")[0]);
+                    ks[i][1] = Integer.parseInt(cords[i].split(",")[1]);
+                }
+                break;
 
             default:
                 throw new IllegalArgumentException("Initial server position invalid argument! Try RANDOM!");
         }
 
         // Set request positions
-        switch (reqstype) {
+        switch (reqsTypeHandler(reqstype)) {
             // Requests appear completely randomly
             case "RANDOM":
                 for (int i = 0; i < req.length; i++) {
@@ -122,18 +130,28 @@ public class KServerTestCase extends AbstractTestCase {
                     req[i][1] = rand.nextInt(y);
                 }
                 break;
+            case "INLINE":
+                reqstype = reqstype.replaceAll("INLINE ", "");
+                String[] cords = reqstype.split(" ");
+                for (int i = 0; i < cords.length; i++) {
+                    req[i][0] = Integer.parseInt(cords[i].split(",")[0]);
+                    req[i][1] = Integer.parseInt(cords[i].split(",")[1]);
+                }
+                break;
             default:
                 throw new IllegalArgumentException("Request appearance method invalid argument! Try RANDOM!");
         }
-
+        //For debugging purposes
+        //KServerTools.printSomething(ks);
+        //KServerTools.printSomething(req);
+        
         KServerTestCase kServerTestCase = new KServerTestCase();
         kServerTestCase.setInput(new KServerInput(ks, req, x, y));
         kServerTestCase.getInput().setParameters(inputParameters);
 
         //Use indexes for solution format, so for example 0 means first servers, 1 means second etc.
         String optimal_solution = "";
-        
-        //TODO fix solution format into index,index,index,index
+
         try {
             Ks kst = new Ks(ks, req, x, y);
             optimal_solution = kst.min_max_Offline();
@@ -146,6 +164,26 @@ public class KServerTestCase extends AbstractTestCase {
 
         return kServerTestCase;
 
+    }
+
+    public String sposTypeHandler(String spostype) {
+        if (spostype.startsWith("RANDOM")) {
+            return "RANDOM";
+        }
+        if (spostype.startsWith("INLINE")) {
+            return "INLINE";
+        }
+        return null;
+    }
+
+    public String reqsTypeHandler(String reqstype) {
+        if (reqstype.startsWith("RANDOM")) {
+            return "RANDOM";
+        }
+        if (reqstype.startsWith("INLINE")) {
+            return "INLINE";
+        }
+        return null;
     }
 
 }
