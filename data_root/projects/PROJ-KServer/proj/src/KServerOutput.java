@@ -8,8 +8,6 @@ import si.fri.algotest.execute.AbstractTestCase;
  */
 public class KServerOutput extends AbstractOutput {
 
-    // TODO: define fields to hold the output data of an algorithm
-    // ...
     String solution;
     int[][] ks;
     int[][] req;
@@ -32,19 +30,19 @@ public class KServerOutput extends AbstractOutput {
         KServerOutput kServerAlgorithmOutput = (KServerOutput) algorithmOutput;
 
         switch (indicatorName) {
-            // TODO: for each indicator defined in the atrd file provide a "case" to determnine its value
-            //case "indicator_name" :
-            //  using the given test case kServerTestCase (which includes the input and the expected output)
-            //    and the given kServerAlgorithmOutput (the actual output of the algorithm) calculate indicator_value
-            //  return indicator_value;
             case "Check":
-                //TODO Do a bunch of checks if output is valid, check length, if indexes are OK and so on
-                return "nOK";
+                // Briefly check if solutions are of same size, although the case "p" won't work if they are not aswell
+                boolean checkOK = (kServerAlgorithmOutput.solution.length() == kServerTestCase.getExpectedOutput().solution.length());
+                return checkOK ? "OK" : "nOK";
             case "p":
                 // Solution/Optimal solution to get p-factor
                 double sol = KServerTools.distTravelled(kServerAlgorithmOutput.solution,kServerAlgorithmOutput.ks,kServerAlgorithmOutput.req);
                 double opt = KServerTools.distTravelled(kServerTestCase.getExpectedOutput().solution,kServerAlgorithmOutput.ks,kServerAlgorithmOutput.req);
-                //TODO What if opt is 0.0 ?
+                
+                //In case the requests are perfectly where the servers are at the moment, then non optimal will be 0.0 aswell
+                if(opt == 0.0)
+                    return 1.0;
+                
                 return sol/opt;
         }
 

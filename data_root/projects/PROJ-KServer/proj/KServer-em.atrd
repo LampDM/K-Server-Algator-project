@@ -11,7 +11,8 @@
       }
     ], 
 
-    "IndicatorOrder" : ["Tmin", "Tmax", "p" ,"Check"],
+    "IndicatorOrder" : ["p" ,"Check"],
+	
     "Indicators":   [	    
       {
        "Name"        : "Tmin",             
