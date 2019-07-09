@@ -132,7 +132,8 @@ public class KServerTestCase extends AbstractTestCase {
 
         //Use indexes for solution format, so for example 0 means first servers, 1 means second etc.
         String optimal_solution = "";
-
+        
+        //TODO fix solution format into index,index,index,index
         try {
             Ks kst = new Ks(ks, req, x, y);
             optimal_solution = kst.min_max_Offline();

@@ -89,30 +89,18 @@ public class Ks implements Serializable {
         return solutionToIndexes(solution, this.ks);
     }
 
-    void startHarmonic(boolean v) {
-        //System.out.println(" _|Harmonic starting|_ ");
-        //printPoints(ks);
-        //printPoints(req);
+    public String startHarmonic() {
         String solution = "";
-        long startTime = System.nanoTime();
         for (Point r : req) {
             solution = solution + closestH(r);
 
         }
-        long estimatedTime = System.nanoTime() - startTime;
-        //System.out.println(solution);
-        System.out.print(globaldistC);
-        System.out.print(",");
-        System.out.print(estimatedTime);
-
         resetK();
-
+        return solutionToIndexes(solution, this.ks);
     }
 
-    void startWFA(boolean v) {
-        //System.out.println(" _|WFA starting|_ ");
-        //printPoints(ks);
-        //printPoints(req);
+    //TODO fix WFA bug
+    public String startWFA() {
         String solution = "";
 
         int xvrstica = binomial(121, ks.length).intValue();
@@ -234,12 +222,8 @@ public class Ks implements Serializable {
             }
         }
 
-        //
-        System.out.println(distvalue);
-        System.out.println(solution);
-        //System.out.print(",");
-        //System.out.print(estimatedTime);
         resetK();
+        return solutionToIndexes(solution, this.ks);
 
     }
 
@@ -902,13 +886,18 @@ public class Ks implements Serializable {
         //Returns a solution describing the indexes of the servers to serve the requests
         return solutionToIndexes(solution, this.ks);
     }
-
+    //TODO test if it works
     private String solutionToIndexes(String solution, Point[] servers) {
         String nsolution = "";
-        for (String s : solution.split("")) {
+        String[] sols = solution.split("");
+        for (int i = 0; i < sols.length; i++) {
             for (int k = 0; k < servers.length; k++) {
-                if (servers[k].name == s.charAt(0)) {
-                    nsolution += k;
+                if (servers[k].name == sols[i].charAt(0)) {
+                    if (i+1==sols.length) {
+                        nsolution += k;
+                    }else{
+                        nsolution += k+",";
+                    }
                 }
             }
         }

@@ -1,9 +1,8 @@
-
 /**
  *
  * @author ...
  */
-public class GreedyAlgorithm extends KServerAbsAlgorithm {
+public class HarmonicAlgorithm extends KServerAbsAlgorithm {
 
     @Override
     protected KServerOutput execute(KServerInput testCase) {
@@ -18,7 +17,7 @@ public class GreedyAlgorithm extends KServerAbsAlgorithm {
         String solution = "";
         try {
             Ks ks = new Ks(servers, requests, x, y);
-            solution = ks.startGreedy();
+            solution = ks.startHarmonic();
         } catch (Exception e) {
 
         }

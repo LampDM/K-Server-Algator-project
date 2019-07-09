@@ -3,7 +3,11 @@
   "Description": "short_project_description",
   "Author": "author_name",
   "Date": "07, 2019",
-  "Algorithms": ["Greedy"],
+  "Algorithms": [
+    "Greedy",
+    "Harmonic",
+    "WFA"
+  ],
   "TestSets": ["TestSet0"],
   "ProjectJARs": [],
   "AlgorithmJARs": [],

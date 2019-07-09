@@ -43,7 +43,7 @@ public class KServerTools {
             req[i][1] = requests[i][1];
         }
 
-        String[] movs = movements.split("");
+        String[] movs = movements.split(",");
         
         for (int i = 0; i < req.length; i++) {
             //server servers[movs[i]] to requests[i], change position of servers[movs[i]]
