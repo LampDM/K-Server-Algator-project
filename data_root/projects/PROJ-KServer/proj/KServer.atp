@@ -8,7 +8,13 @@
     "Harmonic",
     "WFA"
   ],
-  "TestSets": ["TestSet0"],
+  "TestSets": [
+    "TestSet0",
+    "TestSet1",
+    "TestSet2",
+    "TestSet3",
+    "TestSet4"
+  ],
   "ProjectJARs": [],
   "AlgorithmJARs": [],
   "EMExecFamily": "",
