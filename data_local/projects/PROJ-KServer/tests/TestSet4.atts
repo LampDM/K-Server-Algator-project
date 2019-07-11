@@ -2,11 +2,11 @@
   "TestSet": {
     "Name"             : "TestSet4",
 
-    "ShortName"        : "testset_short_name",
-    "Description"      : "testset_description",
-    "N"                : "1",
-    "TestRepeat"       : "10",
-    "TimeLimit"        : "10",
+    "ShortName"        : "TS4",
+    "Description"      : "These tests measure performance with a large number of servers and a moderate ammount of requests on a normal 11x11 field.",
+    "N"                : "12",
+    "TestRepeat"       : "1",
+    "TimeLimit"        : "1",
 
     "TestSetDescHTML"  : "TestSet4.html"
   }

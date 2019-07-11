@@ -13,7 +13,8 @@
     "TestSet1",
     "TestSet2",
     "TestSet3",
-    "TestSet4"
+    "TestSet4",
+    "TestSet5"
   ],
   "ProjectJARs": [],
   "AlgorithmJARs": [],
@@ -24,7 +25,9 @@
   "AlgPresenters": [],
   "MainProjPresenters": [
     "mpPresenter1",
-    "mpPresenter3"
+    "mpPresenter3",
+    "mpPresenter2",
+    "mpPresenter4"
   ],
   "MainAlgPresenters": []
 }}

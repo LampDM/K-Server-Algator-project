@@ -17,6 +17,7 @@ public class WFAAlgorithm extends KServerAbsAlgorithm {
         String solution = "";
         try {
             Ks ks = new Ks(servers, requests, x, y);
+            //@COUNT{CNT1, 1} 
             solution = ks.startWFA();
         } catch (Exception e) {
             System.out.println(e);

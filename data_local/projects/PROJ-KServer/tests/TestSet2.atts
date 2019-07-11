@@ -2,9 +2,9 @@
   "TestSet": {
     "Name"             : "TestSet2",
 
-    "ShortName"        : "testset_short_name",
-    "Description"      : "testset_description",
-    "N"                : "1",
+    "ShortName"        : "TS2",
+    "Description"      : "The set tests small fields with large numbers of requests arriving in a WAVE and CORNER pattern.",
+    "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",
 

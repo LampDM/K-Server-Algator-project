@@ -1,1 +1,12 @@
-... this file should exactly contain N lines (the value of N is defined in TestSet4.atts; each line of this file describes one test case
+test0:2:10:11:11:RANDOM:CORNER
+test1:2:10:11:11:RANDOM:CORNER
+test2:3:10:11:11:RANDOM:CORNER
+test3:3:10:11:11:RANDOM:CORNER
+test4:4:10:11:11:RANDOM:CORNER
+test5:4:10:11:11:RANDOM:CORNER
+test6:5:10:11:11:RANDOM:WAVE
+test7:5:10:11:11:RANDOM:WAVE
+test8:6:10:11:11:RANDOM:WAVE
+test9:6:10:11:11:RANDOM:WAVE
+test10:7:10:11:11:RANDOM:WAVE
+test11:7:10:11:11:RANDOM:WAVE

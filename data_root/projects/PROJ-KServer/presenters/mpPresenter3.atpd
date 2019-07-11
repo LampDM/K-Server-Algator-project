@@ -1,26 +1,51 @@
 {
   "Presenter": {
-    "Name": "mpPresenter3",
-    "Title":        "t_mpPresenter3",
-    "ShortTitle":   "st_mpPresenter3",
-    "Description":  "d_mpPresenter3",
-    "Query"   :     {}, 
-
-    "HasTable":     true, 
-    "Columns" :     [], 
-
-    "HasGraph":       true, 
+    "Columns": [], 
+    "HasGraph": true, 
+    "HasTable": true, 
+    "Query": {
+      "Algorithms": [
+        "Greedy", 
+        "Harmonic", 
+        "WFA"
+      ], 
+      "ComputerID": "", 
+      "Count": "0", 
+      "Filter": [
+        ""
+      ], 
+      "GroupBy": [
+        ""
+      ], 
+      "Indicators": [
+        "p"
+      ], 
+      "Parameters": [], 
+      "SortBy": [
+        ""
+      ], 
+      "TestSets": [
+        "TestSet2"
+      ]
+    }, 
+    "ShortTitle": "st_mpPresenter3", 
+    "Title": "t_mpPresenter3", 
     "categoryLabels": false, 
-    "graphType":      "line", 
-    "gridX":          true, 
-    "gridY":          true, 
-    "logScale":       false, 
-    "manData":        {},  
-    "zoom":           true,
-    "subchart":       false, 
-    "xAxis":          "", 
-    "yAxes":          [], 
-    "xAxisTitle":     "x_mpPresenter3", 
-    "yAxisTitle":     "y_mpPresenter3"    
+    "graphType": "line", 
+    "gridX": true, 
+    "gridY": true, 
+    "hasGraph": true, 
+    "hasTable": true, 
+    "logScale": false, 
+    "manData": {}, 
+    "name": "mpPresenter3", 
+    "subchart": false, 
+    "xAxis": "ID", 
+    "xAxisTitle": "x_mpPresenter3", 
+    "yAxes": [
+      "*.p"
+    ], 
+    "yAxisTitle": "y_mpPresenter3", 
+    "zoom": true
   }
 }

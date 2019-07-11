@@ -5,7 +5,7 @@
     "ShortName"        : "TS0",
     "Description"      : "General tests meant for debugging.",
     "N"                : "6",
-    "TestRepeat"       : "20",
+    "TestRepeat"       : "1",
     "TimeLimit"        : "1",
 
     "TestSetDescHTML"  : "TestSet0.html"

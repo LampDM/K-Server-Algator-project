@@ -64,17 +64,40 @@ public class KServerTestCase extends AbstractTestCase {
     public KServerTestCase generateTestCase(Variables inputParameters) {
         String path = inputParameters.getVariable("Path", "").getStringValue();
 
-        // TODO: 
-        // ... read the values of the parameters and create a corresponding test case
-        // ... Example: if test case is an array of integers of size "N"
-        // int size = inputParameters.getVariable("N", 0).getIntValue();              
-        // int [] array = new int[size];
-        // create a test case 
         int k = inputParameters.getVariable("K", 0).getIntValue();
         int r = inputParameters.getVariable("R", 0).getIntValue();
 
         int x = inputParameters.getVariable("X", 0).getIntValue();
         int y = inputParameters.getVariable("Y", 0).getIntValue();
+
+        //Determine group of test by size of K,R,X Or Y
+        int S = 0;
+        if (x > 15) {
+            S++;
+        }
+        if (y > 15) {
+            S++;
+        }
+        if (x < 6) {
+            S--;
+        }
+        if (y < 6) {
+            S--;
+        }
+        if (k > 4) {
+            S++;
+        }
+        if (r > 13) {
+            S++;
+        }
+        if (r < 5) {
+            S--;
+        }
+        if (S != 0) {
+            String gname = (S > 0) ? "LARGE" : "SMALL";
+            inputParameters.setVariable("Group", gname);
+        }
+
 
         //Since servers can only hold 1 position if there are more places than them we return an error.
         if (k > x * y) {
@@ -166,40 +189,42 @@ public class KServerTestCase extends AbstractTestCase {
                         req[i][0] = rand.nextInt((int) Math.round(x * 0.2));
                         req[i][1] = rand.nextInt((int) Math.round(y * 0.2));
                     } else //60% of reqs in the center wave
-                    if ((i > 0.2 * req.length) && (i < 0.8 * req.length)) {
-                        int xh = (int) (x * 0.2);
-                        int yh = (int) (y * 0.2);
-                        int xd = (int) (x * 0.7);
-                        int yd = (int) (y * 0.7);
-                        //Random number from xh to x and yh to y
-                        req[i][0] = (int) (rand.nextInt(xd - xh) + xh);
-                        req[i][1] = (int) (rand.nextInt(yd - yh) + yh);
-                        //20% of reqs in the last wave
-                    } else {
-                        int xh = (int) (x * 0.7);
-                        int yh = (int) (y * 0.7);
-                        //Random number from xh to x and yh to y
-                        req[i][0] = (int) (rand.nextInt(x - xh) + xh);
-                        req[i][1] = (int) (rand.nextInt(y - yh) + yh);
+                    {
+                        if ((i > 0.2 * req.length) && (i < 0.8 * req.length)) {
+                            int xh = (int) (x * 0.2);
+                            int yh = (int) (y * 0.2);
+                            int xd = (int) (x * 0.7);
+                            int yd = (int) (y * 0.7);
+                            //Random number from xh to x and yh to y
+                            req[i][0] = (int) (rand.nextInt(xd - xh) + xh);
+                            req[i][1] = (int) (rand.nextInt(yd - yh) + yh);
+                            //20% of reqs in the last wave
+                        } else {
+                            int xh = (int) (x * 0.7);
+                            int yh = (int) (y * 0.7);
+                            //Random number from xh to x and yh to y
+                            req[i][0] = (int) (rand.nextInt(x - xh) + xh);
+                            req[i][1] = (int) (rand.nextInt(y - yh) + yh);
+                        }
                     }
                 }
                 break;
             case "FILE":
                 String filename = reqstype.split(" ")[1];
                 String testfile = path + File.separator + filename;
-                        
+
                 File file = new File(testfile);
                 BufferedReader br = null;
                 try {
                     br = new BufferedReader(new FileReader(file));
                     String st = br.readLine();
                     String[] rqs = st.split(" ");
-                    for(int i = 0;i<req.length;i++){
+                    for (int i = 0; i < req.length; i++) {
                         String[] duo = rqs[i].split(",");
                         req[i][0] = Integer.parseInt(duo[0]);
                         req[i][1] = Integer.parseInt(duo[1]);
                     }
-                    
+
                 } catch (Exception ex) {
                     System.out.println(ex);
                     //TODO what to do with exception?
@@ -231,10 +256,9 @@ public class KServerTestCase extends AbstractTestCase {
             System.out.println(e);
             //TODO what happens if error?
         }
-        
+
         //KServerTools.printSomething(ks);
         //KServerTools.printSomething(req);
-        
         kServerTestCase.setExpectedOutput(
                 new KServerOutput(optimal_solution, ks, req));
 

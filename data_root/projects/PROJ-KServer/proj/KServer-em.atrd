@@ -1,13 +1,43 @@
 {
   "Result":
   { 
-    "ParameterOrder" : ["N"],
+    "ParameterOrder" : ["Test","Group","K","R","X","Y"],
     "Parameters":   [	    
       {
-       "Name"         : "N",             
-       "Description"  : "The size of the test", 
+       "Name"         : "Test",             
+       "Description"  : "The name of the test", 
+       "Type"         : "string",  
+       "Meta"         : {"Default": "Test"}     
+      },
+      {
+       "Name"         : "Group",             
+       "Description"  : "The name of the group to which this test belongs", 
+       "Type"         : "enum",  
+       "Meta"         : {"Values":["MISC","SMALL","LARGE"], "Default": "MISC"}     
+      },
+      {
+       "Name"         : "K",             
+       "Description"  : "The number of servers.", 
        "Type"         : "int",  
-       "Meta"         : {"Default": 1000, "Min": 2, "Step": 1000}     
+       "Meta"         : {"Default": 2, "Min": 2, "Step": 1}     
+      },
+      {
+       "Name"         : "R",             
+       "Description"  : "The number of requests", 
+       "Type"         : "int",  
+       "Meta"         : {"Default": 3, "Min": 2, "Step": 1}     
+      },
+      {
+       "Name"         : "X",             
+       "Description"  : "The X dimensions of the testing field.", 
+       "Type"         : "int",  
+       "Meta"         : {"Default": 11, "Min": 5, "Step": 1}     
+      },
+      {
+       "Name"         : "Y",             
+       "Description"  : "The Y dimensions of the testing field.", 
+       "Type"         : "int",  
+       "Meta"         : {"Default": 11, "Min": 5, "Step": 1}     
       }
     ], 
 
