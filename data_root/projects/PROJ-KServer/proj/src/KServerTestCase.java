@@ -231,7 +231,10 @@ public class KServerTestCase extends AbstractTestCase {
             System.out.println(e);
             //TODO what happens if error?
         }
-
+        
+        //KServerTools.printSomething(ks);
+        //KServerTools.printSomething(req);
+        
         kServerTestCase.setExpectedOutput(
                 new KServerOutput(optimal_solution, ks, req));
 

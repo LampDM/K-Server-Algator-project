@@ -19,7 +19,7 @@ public class WFAAlgorithm extends KServerAbsAlgorithm {
             Ks ks = new Ks(servers, requests, x, y);
             solution = ks.startWFA();
         } catch (Exception e) {
-
+            System.out.println(e);
         }
         return solution;
     }

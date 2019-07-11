@@ -45,15 +45,15 @@ public class Ks implements Serializable {
 
     public char[][] cordnames;
     public Point[][] cordpoints;
-    
+
     int x;
     int y;
-    
+
     public Ks(int[][] servers, int[][] requests, int x, int y) throws FileNotFoundException {
-        
+
         this.x = x;
         this.y = y;
-        
+
         this.cordnames = new char[x][y];
         this.cordpoints = new Point[x][y];
 
@@ -195,7 +195,13 @@ public class Ks implements Serializable {
 
         double distvalue = 0;
 
+        //If one or more of reqs at the start are the same as initial pos then server gives shorter answer
+//        System.out.println("Combos:");
+//        for (String str : combo_sequence) {
+//            System.out.println(str);
+//        }
         //Now convert to normal solution format
+        boolean triggered = false;
         solution = "";
         String[] prev = combo_sequence[0].split("");
         String[] oldnames = combo_sequence[0].split("");
@@ -203,6 +209,7 @@ public class Ks implements Serializable {
             for (int j = 0; j < prev.length; j++) {
                 if (!combo_sequence[k].contains(prev[j])) {
                     solution += oldnames[j];
+                    triggered = true;
                     //replace prev[j] with which sign?
                     //najdi razliko med prev in combo_sequence[k]
                     for (int i = 0; i < prev.length; i++) {
@@ -218,16 +225,15 @@ public class Ks implements Serializable {
                     prev[j] = combo_sequence[k];
                     //System.out.println("New prev "+prev[0]+prev[1]);
                     break;
-                } else {
-                    if (j + 1 == prev.length) {
+                } else if (j + 1 == prev.length) {
 
-                    }
                 }
             }
         }
 
         resetK();
-        return solutionToIndexes(solution, this.ks);
+        String nsol = solutionToIndexes(solution, this.ks);
+        return nsol;
 
     }
 
@@ -864,13 +870,11 @@ public class Ks implements Serializable {
 
                 if (Integer.parseInt(seqlist[j]) < e) {
                     cchar = seqlist[j];
-                } else {
-                    if (Integer.parseInt(seqlist[j]) == ri) {
+                } else if (Integer.parseInt(seqlist[j]) == ri) {
 
-                        solution = solution + (char) ks[Integer.parseInt(cchar) - 1].name;
-                        break;
+                    solution = solution + (char) ks[Integer.parseInt(cchar) - 1].name;
+                    break;
 
-                    }
                 }
             }
 
@@ -890,20 +894,66 @@ public class Ks implements Serializable {
         //Returns a solution describing the indexes of the servers to serve the requests
         return solutionToIndexes(solution, this.ks);
     }
+
+    private String stringToIndex(String c, Point[] servers) {
+        for (int i = 0; i < servers.length; i++) {
+            if (servers[i].name == c.charAt(0)) {
+                return Integer.toString(i);
+            }
+        }
+        return "";
+    }
+
+    private String getComma(boolean b) {
+        return b ? "," : "";
+    }
+
     //TODO test if it works
     private String solutionToIndexes(String solution, Point[] servers) {
+
+        //Make fake servers
+        Point[] fservers = new Point[servers.length];
+        for (int i = 0; i < servers.length; i++) {
+            fservers[i] = new Point(0, 0);
+            fservers[i].x = servers[i].x;
+            fservers[i].y = servers[i].y;
+            fservers[i].name = servers[i].name;
+        }
+
         String nsolution = "";
         String[] sols = solution.split("");
-        for (int i = 0; i < sols.length; i++) {
-            for (int k = 0; k < servers.length; k++) {
-                if (servers[k].name == sols[i].charAt(0)) {
-                    if (i+1==sols.length) {
-                        nsolution += k;
-                    }else{
-                        nsolution += k+",";
+        int scount = 0;
+        boolean addcomma = true;
+        //Made only for WFA output because it outputs only movements of servers, problem if requests
+        // appear on top of servers
+        //simuliraj tudi premikanje serverjev ker čene if ki presliši ne bo deloval
+        if (solution.length() != req.length) {
+            for (int i = 0; i < req.length; i++) {
+                if (i + 1 == req.length) {
+                    addcomma = false;
+                }
+                for (int j = 0; j < fservers.length; j++) {
+                    if (req[i].x == fservers[j].x && req[i].y == fservers[j].y) {
+                        nsolution += j + getComma(addcomma);
+                        break;
+                    }
+                    if (j + 1 == fservers.length) {
+                        int ind = Integer.parseInt(stringToIndex(sols[scount], fservers));
+                        nsolution += stringToIndex(sols[scount], fservers) + getComma(addcomma);
+                        //Move apropriate fserver correctly
+                        fservers[ind].x = req[i].x;
+                        fservers[ind].y = req[i].y;
+                        scount++;
                     }
                 }
             }
+        } else {
+
+            for (int i = 0; i < sols.length - 1; i++) {
+                nsolution += stringToIndex(sols[i], servers) + ",";
+            }
+            nsolution += stringToIndex(sols[sols.length - 1], servers);
+
         }
         return nsolution;
     }
