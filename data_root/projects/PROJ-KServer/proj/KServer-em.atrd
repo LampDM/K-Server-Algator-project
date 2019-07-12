@@ -1,7 +1,7 @@
 {
   "Result":
   { 
-    "ParameterOrder" : ["Test","Group","K","R","X","Y"],
+    "ParameterOrder" : ["Test","Group","K","R","DIM"],
     "Parameters":   [	    
       {
        "Name"         : "Test",             
@@ -26,18 +26,6 @@
        "Description"  : "The number of requests", 
        "Type"         : "int",  
        "Meta"         : {"Default": 3, "Min": 2, "Step": 1}     
-      },
-      {
-       "Name"         : "X",             
-       "Description"  : "The X dimensions of the testing field.", 
-       "Type"         : "int",  
-       "Meta"         : {"Default": 11, "Min": 5, "Step": 1}     
-      },
-      {
-       "Name"         : "Y",             
-       "Description"  : "The Y dimensions of the testing field.", 
-       "Type"         : "int",  
-       "Meta"         : {"Default": 11, "Min": 5, "Step": 1}     
       }
     ], 
 

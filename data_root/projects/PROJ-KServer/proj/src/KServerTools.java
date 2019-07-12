@@ -16,10 +16,18 @@ public class KServerTools {
 
     }
 
+    //hash table with strings to check request collisions TODO
     public static void printSomething(int[][] something) {
-        System.out.println("");
-        for (int[] el : something) {
-            System.out.print("(" + el[0] + "," + el[1] + ") ");
+        for (int i = 0; i < something.length; i++) {
+            System.out.print(" (");
+            for (int j = 0; j < something[i].length; j++) {
+                System.out.print(something[i][j]);
+                if (j + 1 != something[i].length) {
+                    System.out.print(",");
+                }
+
+            }
+            System.out.print(") ");
         }
         System.out.println("");
     }

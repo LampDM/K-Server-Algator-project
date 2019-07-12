@@ -8,14 +8,12 @@ public class KServerInput extends AbstractInput {
 
     int[][] ks;
     int[][] req;
-    int x;
-    int y;
+    int[] dimRange;
     
-    public KServerInput(int[][] servers, int[][] requests, int xaxis, int yaxis) {
+    public KServerInput(int[][] servers, int[][] requests, int[] dimRange) {
         this.ks = servers;
         this.req = requests;
-        this.x = xaxis;
-        this.y = yaxis;
+        this.dimRange = dimRange;
     }
 
     @Override
