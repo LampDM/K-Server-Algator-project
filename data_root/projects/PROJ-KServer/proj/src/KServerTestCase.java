@@ -115,16 +115,29 @@ public class KServerTestCase extends AbstractTestCase {
         Random rand = new Random(System.currentTimeMillis());
 
         //To prevent servers being in the same starting position
-        Hashtable<String,String> seen = new Hashtable<String,String>();
-        //TODO
+        Hashtable<String, String> seen = new Hashtable<String, String>();
+        //boolean[] seen2 = new boolean[Integer.MAX_VALUE];
+        
         // Set initial server positions
         switch (sposTypeHandler(spostype)) {
             case "RANDOM":
-                //TODO implement anti collision SEEN
+                //TODO maybe find a way to make it faster
                 // Servers start completely randomly
                 for (int i = 0; i < ks.length; i++) {
-                    for (int j = 0; j < dimensions; j++) {
-                        ks[i][j] = rand.nextInt(dimRange[j]);
+                    String dims = "";
+                    do {
+                        dims = "";
+                        for (int j = 0; j < dimensions; j++) {
+                            //System.out.println(dimRange[j]);
+                            dims += rand.nextInt(dimRange[j]);
+                        }
+                        
+                    } while (seen.containsKey(dims));
+                    
+                    seen.put(dims, "");
+                    String[] dimsl = dims.split("");
+                    for(int j = 0;j<dimensions;j++){
+                        ks[i][j] = Integer.parseInt(dimsl[j]);
                     }
                 }
                 break;
@@ -252,20 +265,13 @@ public class KServerTestCase extends AbstractTestCase {
 
         //Use indexes for solution format, so for example 0 means first servers, 1 means second etc.
         String optimal_solution = "";
-        int a = dimRange[0];
-        try {
-            //TODO optimalna resitev za N space? generiraj vse permutacije spet
-            if (dimRange.length == 2) {
-                Ks kst = new Ks(ks, req, dimRange[0], dimRange[1]);
-                optimal_solution = kst.min_max_Offline();
-            } else {
-                //TODO bolj splosni optimal
 
-            }
+        try {
+
+            optimal_solution = KServerTools.min_max_Offline(ks, req, dimRange);
 
         } catch (Exception e) {
             System.out.println(e);
-            //TODO what happens if error?
         }
 
         //KServerTools.printSomething(ks);

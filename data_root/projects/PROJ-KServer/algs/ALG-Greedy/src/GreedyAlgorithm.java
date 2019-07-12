@@ -15,15 +15,26 @@ public class GreedyAlgorithm extends KServerAbsAlgorithm {
     }
 
     public String execute(int[][] servers, int[][] requests, int[] dimRange) {
-        String solution = "";
-        try {
-            if (dimRange.length == 2) {
-                Ks ks = new Ks(servers, requests, dimRange[0], dimRange[1]);
-                solution = ks.startGreedy();
+        int[][] fservers = new int[servers.length][servers[0].length];
+        //TODO fix this crappyness
+        for(int i = 0;i<fservers.length;i++){
+            for(int j = 0;j<fservers[i].length;j++){
+                fservers[i][j]=servers[i][j];
             }
-        } catch (Exception e) {
-
+        }
+        String solution = "";
+        for (int i = 0; i < requests.length; i++) {
+            int closest = KServerTools.findClosest(requests[i], fservers);
+            solution += Integer.toString(closest);
+            
+            //Move server to the new point
+            KServerTools.moveTo(fservers[closest], requests[i]);
+            
+            if (i < requests.length - 1) {
+                solution += ",";
+            }
         }
         return solution;
     }
+
 }
