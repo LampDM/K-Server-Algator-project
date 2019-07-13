@@ -1,5 +1,6 @@
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Random;
 
 /*
@@ -354,10 +355,9 @@ public class KServerTools {
 
     }
 
-    //hash table with strings to check request collisions TODO
     public static void printSomething(int[][] something) {
         for (int i = 0; i < something.length; i++) {
-            System.out.print(" (");
+            System.out.print(" ");
             for (int j = 0; j < something[i].length; j++) {
                 System.out.print(something[i][j]);
                 if (j + 1 != something[i].length) {
@@ -365,7 +365,6 @@ public class KServerTools {
                 }
 
             }
-            System.out.print(") ");
         }
         System.out.println("");
     }
@@ -378,7 +377,7 @@ public class KServerTools {
         return Math.sqrt(rez);
     }
     
-    public static int findClosest(int[] request, int[][] servers){
+    public static int findClosestG(int[] request, int[][] servers){
         int sol = 0;
         Double minDist = Double.MAX_VALUE;
         Double cur = 0.0;
@@ -392,6 +391,50 @@ public class KServerTools {
         return sol;
     }
     
+    public static int findClosestH(int[] request, int[][] servers) {
+        
+        double totaldist = 0;
+
+        double N = 0;
+        
+        for(int i = 0;i<servers.length;i++){
+            N += (1/calcDist(request,servers[i]));
+        }
+        
+        double[][] serverprobs = new double[servers.length][2];
+        
+        for(int i = 0;i<serverprobs.length;i++){
+            serverprobs[i][0]=1 / (N * calcDist(request, servers[i]));
+            serverprobs[i][1]=i;
+        }
+        
+        Comparator<double[]> comp = new Comparator<double[]>() {
+            public int compare(double[] p1, double[] p2) {
+                int i = 0;
+                if (p1[0] < p2[0]) {
+                    i = 1;
+                } else if (p1[0] > p2[0]) {
+                    i = -1;
+                }
+                return i;
+            }
+        };
+
+        Arrays.sort(serverprobs, comp);
+        
+        double roll = Math.random();
+        double total = 0;
+        for(int i = 0;i<serverprobs.length;i++){
+            total += serverprobs[i][0];
+            if(roll <= total){
+                //Choose this one
+                return (int)serverprobs[i][1];
+            }
+        }
+        
+        return 0;
+    }
+    
     public static void moveTo(int[] server, int[] request){
         for(int i = 0;i<server.length;i++){
             server[i]=request[i];
@@ -401,7 +444,6 @@ public class KServerTools {
 
     public static double distTravelled(String movements, int[][] servers, int[][] requests) {
         double dist = 0.0;
-        //TODO turn this into some function or find more elegant solution
         int[][] ks = new int[servers.length][servers[0].length];
         int[][] req = new int[requests.length][requests[0].length];
 

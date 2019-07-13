@@ -105,7 +105,6 @@ public class Ks implements Serializable {
         return solutionToIndexes(solution, this.ks);
     }
 
-    //TODO fix WFA bug, when initial server pos and req pos are same function returns just 1 index sol
     public String startWFA() {
         String solution = "";
 

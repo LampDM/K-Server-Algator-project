@@ -115,28 +115,27 @@ public class KServerTestCase extends AbstractTestCase {
         Random rand = new Random(System.currentTimeMillis());
 
         //To prevent servers being in the same starting position
-        Hashtable<String, String> seen = new Hashtable<String, String>();
-        //boolean[] seen2 = new boolean[Integer.MAX_VALUE];
+        Hashtable<String, String> seen = new Hashtable<>();
+        StringBuilder dims = new StringBuilder();
         
         // Set initial server positions
         switch (sposTypeHandler(spostype)) {
             case "RANDOM":
-                //TODO maybe find a way to make it faster
                 // Servers start completely randomly
                 for (int i = 0; i < ks.length; i++) {
-                    String dims = "";
+                    
                     do {
-                        dims = "";
+                        dims.setLength(0);
                         for (int j = 0; j < dimensions; j++) {
-                            //System.out.println(dimRange[j]);
-                            dims += rand.nextInt(dimRange[j]);
+                            dims.append(rand.nextInt(dimRange[j]));
                         }
                         
-                    } while (seen.containsKey(dims));
+                    } while (seen.containsKey(dims.toString()));
                     
-                    seen.put(dims, "");
-                    String[] dimsl = dims.split("");
-                    for(int j = 0;j<dimensions;j++){
+                    seen.put(dims.toString(), "");
+                    
+                    String[] dimsl = dims.toString().split("");
+                    for (int j = 0; j < dimensions; j++) {
                         ks[i][j] = Integer.parseInt(dimsl[j]);
                     }
                 }
@@ -206,8 +205,7 @@ public class KServerTestCase extends AbstractTestCase {
                         }
 
                     } else //60% of reqs in the center wave
-                    {
-                        if ((i > 0.2 * req.length) && (i < 0.8 * req.length)) {
+                     if ((i > 0.2 * req.length) && (i < 0.8 * req.length)) {
                             for (int j = 0; j < dimensions; j++) {
                                 int jh = (int) (dimRange[j] * 0.2);
                                 int jd = (int) (dimRange[j] * 0.7);
@@ -222,7 +220,6 @@ public class KServerTestCase extends AbstractTestCase {
                                 req[i][j] = (int) (rand.nextInt(dimRange[j] - jh) + jh);
                             }
                         }
-                    }
                 }
                 break;
             case "FILE":
@@ -244,7 +241,6 @@ public class KServerTestCase extends AbstractTestCase {
 
                 } catch (Exception ex) {
                     System.out.println(ex);
-                    //TODO what to do with exception?
                 }
 
                 break;
@@ -267,15 +263,11 @@ public class KServerTestCase extends AbstractTestCase {
         String optimal_solution = "";
 
         try {
-
             optimal_solution = KServerTools.min_max_Offline(ks, req, dimRange);
-
         } catch (Exception e) {
             System.out.println(e);
         }
 
-        //KServerTools.printSomething(ks);
-        //KServerTools.printSomething(req);
         kServerTestCase.setExpectedOutput(
                 new KServerOutput(optimal_solution, ks, req));
 

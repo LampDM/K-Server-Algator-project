@@ -16,7 +16,6 @@ public class GreedyAlgorithm extends KServerAbsAlgorithm {
 
     public String execute(int[][] servers, int[][] requests, int[] dimRange) {
         int[][] fservers = new int[servers.length][servers[0].length];
-        //TODO fix this crappyness
         for(int i = 0;i<fservers.length;i++){
             for(int j = 0;j<fservers[i].length;j++){
                 fservers[i][j]=servers[i][j];
@@ -24,7 +23,7 @@ public class GreedyAlgorithm extends KServerAbsAlgorithm {
         }
         String solution = "";
         for (int i = 0; i < requests.length; i++) {
-            int closest = KServerTools.findClosest(requests[i], fservers);
+            int closest = KServerTools.findClosestG(requests[i], fservers);
             solution += Integer.toString(closest);
             
             //Move server to the new point
