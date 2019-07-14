@@ -1,0 +1,13 @@
+{
+  "TestSet": {
+    "Name"             : "TestSet12",
+
+    "ShortName"        : "TS12",
+    "Description"      : "Insert generic description here",
+    "N"                : "12",
+    "TestRepeat"       : "1",
+    "TimeLimit"        : "1",
+
+    "TestSetDescHTML"  : "TestSet12.html"
+  }
+}

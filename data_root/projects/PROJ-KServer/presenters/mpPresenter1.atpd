@@ -31,7 +31,7 @@
       ]
     }, 
     "ShortTitle": "st_mpPresenter1", 
-    "Title": "t_mpPresenter1", 
+    "Title": "Performance in WAVE scenario", 
     "categoryLabels": false, 
     "graphType": "line", 
     "gridX": true, 
@@ -43,11 +43,11 @@
     "name": "mpPresenter1", 
     "subchart": false, 
     "xAxis": "ID", 
-    "xAxisTitle": "x_mpPresenter1", 
+    "xAxisTitle": "Number of test", 
     "yAxes": [
       "*.p"
     ], 
-    "yAxisTitle": "y_mpPresenter1", 
+    "yAxisTitle": "p value", 
     "zoom": true
   }
 }

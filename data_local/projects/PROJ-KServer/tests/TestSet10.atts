@@ -1,0 +1,13 @@
+{
+  "TestSet": {
+    "Name"             : "TestSet10",
+
+    "ShortName"        : "TS10",
+    "Description"      : "A test set meant for measuring execution time performance.",
+    "N"                : "3",
+    "TestRepeat"       : "100",
+    "TimeLimit"        : "1",
+
+    "TestSetDescHTML"  : "TestSet10.html"
+  }
+}

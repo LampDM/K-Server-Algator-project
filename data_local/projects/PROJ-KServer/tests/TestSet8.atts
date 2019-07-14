@@ -1,0 +1,13 @@
+{
+  "TestSet": {
+    "Name"             : "TestSet8",
+
+    "ShortName"        : "TS8",
+    "Description"      : "A test set testing 7D space performance.",
+    "N"                : "12",
+    "TestRepeat"       : "1",
+    "TimeLimit"        : "1",
+
+    "TestSetDescHTML"  : "TestSet8.html"
+  }
+}

@@ -3,7 +3,7 @@
     "Name"             : "TestSet0",
 
     "ShortName"        : "TS0",
-    "Description"      : "General tests meant for debugging.",
+    "Description"      : "General tests meant for debugging and to provide an example of possible syntactically correct input.",
     "N"                : "6",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",

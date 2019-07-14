@@ -2,9 +2,9 @@
   "TestSet": {
     "Name"             : "TestSet6",
 
-    "ShortName"        : "testset_short_name",
-    "Description"      : "testset_description",
-    "N"                : "3",
+    "ShortName"        : "TS6",
+    "Description"      : "Testing performance in 1D space.",
+    "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",
 

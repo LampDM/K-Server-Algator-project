@@ -1,0 +1,17 @@
+{"Project": {
+  "Name": "KServerTools",
+  "Description": "short_project_description",
+  "Author": "author_name",
+  "Date": "07, 2019",
+  "Algorithms": [],
+  "TestSets": ["faketest"],
+  "ProjectJARs": [],
+  "AlgorithmJARs": [],
+  "EMExecFamily": "",
+  "CNTExecFamily": "",
+  "JVMExecFamily": "",
+  "ProjPresenters": [],
+  "AlgPresenters": [],
+  "MainProjPresenters": [],
+  "MainAlgPresenters": []
+}}

@@ -1,0 +1,53 @@
+{
+  "Presenter": {
+    "Columns": [], 
+    "HasGraph": true, 
+    "HasTable": true, 
+    "Query": {
+      "Algorithms": [
+        "Greedy", 
+        "Harmonic", 
+        "WFA"
+      ], 
+      "ComputerID": "", 
+      "Count": "0", 
+      "Filter": [
+        ""
+      ], 
+      "GroupBy": [
+        ""
+      ], 
+      "Indicators": [
+        "p"
+      ], 
+      "Parameters": [
+        "*"
+      ], 
+      "SortBy": [
+        ""
+      ], 
+      "TestSets": [
+        "TestSet13"
+      ]
+    }, 
+    "ShortTitle": "st_mpPresenter2", 
+    "Title": "Performance in RANDOM scenario", 
+    "categoryLabels": false, 
+    "graphType": "line", 
+    "gridX": true, 
+    "gridY": true, 
+    "hasGraph": true, 
+    "hasTable": true, 
+    "logScale": false, 
+    "manData": {}, 
+    "name": "mpPresenter2", 
+    "subchart": false, 
+    "xAxis": "ID", 
+    "xAxisTitle": "Number of test", 
+    "yAxes": [
+      "*.p"
+    ], 
+    "yAxisTitle": "p value", 
+    "zoom": true
+  }
+}
