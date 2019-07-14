@@ -1,13 +1,13 @@
 {
   "TestSet": {
-    "Name"             : "TestSet11",
+    "Name"             : "TestSet1",
 
-    "ShortName"        : "TS11",
+    "ShortName"        : "TS1",
     "Description"      : "Test set dedicated to testing performance of algorithms given CORNER case.",
     "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",
 
-    "TestSetDescHTML"  : "TestSet11.html"
+    "TestSetDescHTML"  : "TestSet1.html"
   }
 }

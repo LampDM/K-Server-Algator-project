@@ -3,9 +3,9 @@
     "Name"             : "TestSet1",
 
     "ShortName"        : "TS1",
-    "Description"      : "A test set describing the testing done in the provided bachelor thesis along with real world crime data.",
+    "Description"      : "Test set dedicated to testing performance of algorithms given CORNER case.",
     "N"                : "12",
-    "TestRepeat"       : "5",
+    "TestRepeat"       : "1",
     "TimeLimit"        : "1",
 
     "TestSetDescHTML"  : "TestSet1.html"

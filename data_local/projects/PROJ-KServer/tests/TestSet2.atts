@@ -3,7 +3,7 @@
     "Name"             : "TestSet2",
 
     "ShortName"        : "TS2",
-    "Description"      : "The set tests small fields with large numbers of requests arriving in a WAVE and CORNER pattern.",
+    "Description"      : "testset_description",
     "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",
