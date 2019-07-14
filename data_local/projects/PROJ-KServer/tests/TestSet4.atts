@@ -3,7 +3,7 @@
     "Name"             : "TestSet4",
 
     "ShortName"        : "TS4",
-    "Description"      : "These tests measure performance with a large number of servers and a moderate ammount of requests on a normal 11x11 field.",
+    "Description"      : "",
     "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",

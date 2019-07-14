@@ -3,7 +3,7 @@
     "Name"             : "TestSet6",
 
     "ShortName"        : "TS6",
-    "Description"      : "Testing performance in 1D space.",
+    "Description"      : "",
     "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",

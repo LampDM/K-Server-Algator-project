@@ -1,0 +1,53 @@
+{
+  "Presenter": {
+    "Columns": [], 
+    "HasGraph": true, 
+    "HasTable": true, 
+    "Query": {
+      "Algorithms": [
+        "Greedy", 
+        "Harmonic", 
+        "WFA"
+      ], 
+      "ComputerID": "", 
+      "Count": "0", 
+      "Filter": [
+        ""
+      ], 
+      "GroupBy": [
+        ""
+      ], 
+      "Indicators": [
+        "p"
+      ], 
+      "Parameters": [
+        "*"
+      ], 
+      "SortBy": [
+        ""
+      ], 
+      "TestSets": [
+        "TestSet6"
+      ]
+    }, 
+    "ShortTitle": "st_mpPresenter6", 
+    "Title": "WAVE 4 Servers", 
+    "categoryLabels": false, 
+    "graphType": "line", 
+    "gridX": true, 
+    "gridY": true, 
+    "hasGraph": true, 
+    "hasTable": true, 
+    "logScale": false, 
+    "manData": {}, 
+    "name": "mpPresenter6", 
+    "subchart": false, 
+    "xAxis": "ID", 
+    "xAxisTitle": "x_mpPresenter6", 
+    "yAxes": [
+      "*.p"
+    ], 
+    "yAxisTitle": "y_mpPresenter6", 
+    "zoom": true
+  }
+}

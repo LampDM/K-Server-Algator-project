@@ -34,7 +34,10 @@
   "MainProjPresenters": [
     "mpPresenter4",
     "mpPresenter1",
-    "mpPresenter2"
+    "mpPresenter2",
+    "mpPresenter3",
+    "mpPresenter5",
+    "mpPresenter6"
   ],
   "MainAlgPresenters": []
 }}
