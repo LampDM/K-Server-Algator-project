@@ -1,26 +1,53 @@
 {
   "Presenter": {
-    "Name": "mpPresenter4",
-    "Title":        "t_mpPresenter4",
-    "ShortTitle":   "st_mpPresenter4",
-    "Description":  "d_mpPresenter4",
-    "Query"   :     {}, 
-
-    "HasTable":     true, 
-    "Columns" :     [], 
-
-    "HasGraph":       true, 
+    "Columns": [], 
+    "HasGraph": true, 
+    "HasTable": true, 
+    "Query": {
+      "Algorithms": [
+        "Greedy", 
+        "Harmonic", 
+        "WFA"
+      ], 
+      "ComputerID": "", 
+      "Count": "0", 
+      "Filter": [
+        ""
+      ], 
+      "GroupBy": [
+        ""
+      ], 
+      "Indicators": [
+        "p"
+      ], 
+      "Parameters": [
+        "*"
+      ], 
+      "SortBy": [
+        ""
+      ], 
+      "TestSets": [
+        "TestSet11"
+      ]
+    }, 
+    "ShortTitle": "PCS", 
+    "Title": "Performance in CORNER scenario", 
     "categoryLabels": false, 
-    "graphType":      "line", 
-    "gridX":          true, 
-    "gridY":          true, 
-    "logScale":       false, 
-    "manData":        {},  
-    "zoom":           true,
-    "subchart":       false, 
-    "xAxis":          "", 
-    "yAxes":          [], 
-    "xAxisTitle":     "x_mpPresenter4", 
-    "yAxisTitle":     "y_mpPresenter4"    
+    "graphType": "line", 
+    "gridX": true, 
+    "gridY": true, 
+    "hasGraph": true, 
+    "hasTable": true, 
+    "logScale": false, 
+    "manData": {}, 
+    "name": "mpPresenter4", 
+    "subchart": false, 
+    "xAxis": "ID", 
+    "xAxisTitle": "Number of test", 
+    "yAxes": [
+      "*.p"
+    ], 
+    "yAxisTitle": "p value", 
+    "zoom": true
   }
 }

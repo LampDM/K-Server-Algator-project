@@ -3,7 +3,7 @@
     "Name"             : "TestSet3",
 
     "ShortName"        : "TS3",
-    "Description"      : "Very similar to TS2 only that requests arrive completely randomly.",
+    "Description"      : "The same as TS2 only that requests arrive completely randomly.",
     "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",

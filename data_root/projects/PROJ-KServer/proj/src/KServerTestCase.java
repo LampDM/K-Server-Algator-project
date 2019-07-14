@@ -2,10 +2,8 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.HashSet;
-import java.util.Hashtable;
+import java.util.HashMap;
 import java.util.Random;
-import java.util.Set;
 import si.fri.algotest.entities.Variables;
 import si.fri.algotest.execute.AbstractTestCase;
 
@@ -115,25 +113,25 @@ public class KServerTestCase extends AbstractTestCase {
         Random rand = new Random(System.currentTimeMillis());
 
         //To prevent servers being in the same starting position
-        Hashtable<String, String> seen = new Hashtable<>();
+        HashMap<String, String> seen = new HashMap<>();
         StringBuilder dims = new StringBuilder();
-        
+
         // Set initial server positions
         switch (sposTypeHandler(spostype)) {
             case "RANDOM":
                 // Servers start completely randomly
                 for (int i = 0; i < ks.length; i++) {
-                    
+
                     do {
                         dims.setLength(0);
                         for (int j = 0; j < dimensions; j++) {
                             dims.append(rand.nextInt(dimRange[j]));
                         }
-                        
+
                     } while (seen.containsKey(dims.toString()));
-                    
+
                     seen.put(dims.toString(), "");
-                    
+
                     String[] dimsl = dims.toString().split("");
                     for (int j = 0; j < dimensions; j++) {
                         ks[i][j] = Integer.parseInt(dimsl[j]);
@@ -150,6 +148,29 @@ public class KServerTestCase extends AbstractTestCase {
                     }
                 }
                 break;
+
+            case "FILE":
+                String filename = spostype.split(" ")[1];
+                String testfile = path + File.separator + filename;
+
+                File file = new File(testfile);
+                BufferedReader br = null;
+                try {
+                    br = new BufferedReader(new FileReader(file));
+                    String st = br.readLine();
+                    String[] sqs = st.split(" ");
+                    for (int i = 0; i < ks.length; i++) {
+                        String[] multi = sqs[i].split(",");
+                        for (int j = 0; j < dimensions; j++) {
+                            ks[i][j] = Integer.parseInt(multi[j]);
+                        }
+                    }
+
+                } catch (Exception ex) {
+                    System.out.println(ex);
+                }
+                break;
+                
             default:
                 throw new IllegalArgumentException("Initial server position invalid argument! Try RANDOM!");
         }
@@ -205,7 +226,8 @@ public class KServerTestCase extends AbstractTestCase {
                         }
 
                     } else //60% of reqs in the center wave
-                     if ((i > 0.2 * req.length) && (i < 0.8 * req.length)) {
+                    {
+                        if ((i > 0.2 * req.length) && (i < 0.8 * req.length)) {
                             for (int j = 0; j < dimensions; j++) {
                                 int jh = (int) (dimRange[j] * 0.2);
                                 int jd = (int) (dimRange[j] * 0.7);
@@ -220,6 +242,7 @@ public class KServerTestCase extends AbstractTestCase {
                                 req[i][j] = (int) (rand.nextInt(dimRange[j] - jh) + jh);
                             }
                         }
+                    }
                 }
                 break;
             case "FILE":

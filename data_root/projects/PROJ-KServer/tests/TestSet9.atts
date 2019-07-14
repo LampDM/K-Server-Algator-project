@@ -1,0 +1,13 @@
+{
+  "TestSet": {
+    "Name"             : "TestSet9",
+
+    "ShortName"        : "TS9",
+    "Description"      : "A test set in 7D but this time using non random request appearance (WAVE, CORNER).",
+    "N"                : "12",
+    "TestRepeat"       : "1",
+    "TimeLimit"        : "1",
+
+    "TestSetDescHTML"  : "TestSet9.html"
+  }
+}

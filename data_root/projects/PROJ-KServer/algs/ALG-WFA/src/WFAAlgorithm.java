@@ -19,6 +19,8 @@ public class WFAAlgorithm extends KServerAbsAlgorithm {
             if (dimRange.length == 2) {
                 Ks ks = new Ks(servers, requests, dimRange[0], dimRange[1]);
                 solution = ks.startWFA();
+            }else{
+                System.out.println("Warning - WFA only works with two dimensions, returning empty string.");
             }
         } catch (Exception e) {
             System.out.println(e);
