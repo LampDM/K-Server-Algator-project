@@ -27,11 +27,11 @@
         ""
       ], 
       "TestSets": [
-        "TestSet1"
+        "TestSet4"
       ]
     }, 
-    "ShortTitle": "WFBF", 
-    "Title": "WFA the best for patterns", 
+    "ShortTitle": "W4SIBE", 
+    "Title": "With 4 servers it becomes equal", 
     "categoryLabels": false, 
     "graphType": "line", 
     "gridX": true, 
@@ -40,7 +40,7 @@
     "hasTable": true, 
     "logScale": false, 
     "manData": {}, 
-    "name": "pPresenter1", 
+    "name": "pPresenter2", 
     "subchart": false, 
     "xAxis": "ID", 
     "xAxisTitle": "Number of test", 

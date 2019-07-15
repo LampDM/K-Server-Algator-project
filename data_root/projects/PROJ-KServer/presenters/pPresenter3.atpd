@@ -27,11 +27,11 @@
         ""
       ], 
       "TestSets": [
-        "TestSet1"
+        "TestSet2"
       ]
     }, 
-    "ShortTitle": "WFBF", 
-    "Title": "WFA the best for patterns", 
+    "ShortTitle": "NP", 
+    "Title": "No patterns", 
     "categoryLabels": false, 
     "graphType": "line", 
     "gridX": true, 
@@ -40,7 +40,7 @@
     "hasTable": true, 
     "logScale": false, 
     "manData": {}, 
-    "name": "pPresenter1", 
+    "name": "pPresenter3", 
     "subchart": false, 
     "xAxis": "ID", 
     "xAxisTitle": "Number of test", 

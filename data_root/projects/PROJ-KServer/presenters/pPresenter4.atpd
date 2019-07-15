@@ -6,8 +6,7 @@
     "Query": {
       "Algorithms": [
         "Greedy", 
-        "Harmonic", 
-        "WFA"
+        "Harmonic"
       ], 
       "ComputerID": "", 
       "Count": "0", 
@@ -27,11 +26,13 @@
         ""
       ], 
       "TestSets": [
-        "TestSet1"
+        "TestSet7", 
+        "TestSet8", 
+        "TestSet9"
       ]
     }, 
-    "ShortTitle": "WFBF", 
-    "Title": "WFA the best for patterns", 
+    "ShortTitle": "IIDBS", 
+    "Title": "An increase to dimension brings convergence", 
     "categoryLabels": false, 
     "graphType": "line", 
     "gridX": true, 
@@ -40,7 +41,7 @@
     "hasTable": true, 
     "logScale": false, 
     "manData": {}, 
-    "name": "pPresenter1", 
+    "name": "pPresenter4", 
     "subchart": false, 
     "xAxis": "ID", 
     "xAxisTitle": "Number of test", 
