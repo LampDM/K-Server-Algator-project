@@ -18,7 +18,8 @@
   "ProjectJARs": ["basicsort.jar"],
   "ProjPresenters": [
     "presenter2",
-    "presenter3"
+    "presenter3",
+    "pPresenter1"
   ],
   "AlgPresenters": ["aPresenter2"],
   "MainProjPresenters": [

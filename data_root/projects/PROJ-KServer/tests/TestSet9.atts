@@ -3,7 +3,7 @@
     "Name"             : "TestSet9",
 
     "ShortName"        : "TS9",
-    "Description"      : "A test set measuring 7D performance.",
+    "Description"      : "2,185,11x11x...x11(7 dim),RANDOM,RANDOM",
     "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",

@@ -42,8 +42,8 @@
     "manData": {}, 
     "name": "mpPresenter7", 
     "subchart": false, 
-    "xAxis": "ID", 
-    "xAxisTitle": "Number of test", 
+    "xAxis": "R", 
+    "xAxisTitle": "Number of requests", 
     "yAxes": [
       "*.Tmin"
     ], 

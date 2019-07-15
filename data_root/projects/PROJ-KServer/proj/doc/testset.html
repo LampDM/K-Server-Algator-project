@@ -1,3 +1,60 @@
 <html>
-    ... please edit %thisfile% to provide an overview description of the test sets of the project KServer.
+    
+
+As k-server algorithms contain a lot of different variables we've crafted test cases to cover the majority of them. </br> </br>
+These variables are:
+
+</br>
+<h4>1. The number of servers</h4>
+The lowest number of servers needed for testing to make sense is k = 2 as with k = 1 a simple Greedy algorithm always produces an optimal solution.
+Test sets from 1 to 3 utilise k = 2 while 4 to 6 utilise k = 4. In general the number of servers greatly impacts the performance of more complex algorithms. Due to the nature of our Work Function Algorithm (WFA) implementation we've limited ourselves to just a high of k = 4 as any more requires more memory investment.
+<h4>2. The number of requests</h4>
+Much like the number of servers the number of requests is also important. With just one request the optimal solution once again follows the Greedy algorithm. In real life scenarios there will however always be plenty of requests so we've illustrated this accordingly by using 185 requests in testsets from 1 to 3 and 7 to 9. In testsets 4 to 5 we utilised just 5 requests in order to lessen the memory costs of the WFA.
+<h4>3. The dimensions of the metric space</h4>
+We've limited ourselves to a metric space of two dimensions with the exception of testsets 7 to 9 which serve to illustrate performance differences between different dimensions.
+<h4>4. The starting positions of servers</h4>
+As we do not have a large amount of servers we distributed them randomly in every testset.
+<h4>5. The starting positions of requests</h4>
+We've utilised three main methods of request appearance:
+<ul>
+<li>Requests appear completely randomly.</li>
+<li>Requests appear in a "corner" pattern. Meaning that 70% of all requests first appear in a "corner" defined by 0.2 * dimension weight for each dimension. For example in a 1 dimensional scenario the metric space is just a line of length n. The first 70% of requests will appear on the section of the line from 0 to n * 0.2. The remaining 30% of requests will appear on the remainder of the line. In two dimensions this corresponds to 70% of the requests first appearing in a "rectangle" of sizes [0,x*0.2] and [0,y*0.2] and afterwards elsewhere. </br>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;" ></canvas> <script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0, c.height*0.2);
+ctx.lineTo(c.width*0.2, c.height*0.2);
+ctx.stroke(); 
+ctx.moveTo(c.width*0.2,0 );
+ctx.lineTo(c.width*0.2,c.height*0.2);
+ctx.stroke(); 
+</script>
+
+</li>
+<li>Requests appear in a "wave" pattern. Meaning that 20% of requests first appear in a 0.2 * length corner as described in the previous method. The next 60% of requests appear in a region from 0.2 * length to 0.8 * length. Finally the remaining requests appear in the remaing area. </br>
+<canvas id="myCanvas2" width="200" height="100" style="border:1px solid #000000;" ></canvas> <script>
+var c = document.getElementById("myCanvas2");
+var ctx = c.getContext("2d");
+ctx.moveTo(0, c.height*0.2);
+ctx.lineTo(c.width*0.2, c.height*0.2);
+ctx.stroke(); 
+
+ctx.moveTo(c.width*0.2,0 );
+ctx.lineTo(c.width*0.2,c.height*0.2);
+ctx.stroke(); 
+
+ctx.moveTo(0,c.height*0.8)
+ctx.lineTo(c.width*0.8,c.height*0.8);
+ctx.stroke();
+
+ctx.moveTo(c.width*0.8,0);
+ctx.lineTo(c.width*0.8,c.height*0.8);
+ctx.stroke(); 
+
+
+
+</script>
+</li>
+</ul>
+
 </html>

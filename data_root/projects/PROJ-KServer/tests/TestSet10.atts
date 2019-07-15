@@ -3,7 +3,7 @@
     "Name"             : "TestSet10",
 
     "ShortName"        : "TS10",
-    "Description"      : "A test set meant for measuring execution time performance.",
+    "Description"      : "2,5 to 110,11x11,RANDOM,RANDOM",
     "N"                : "12",
     "TestRepeat"       : "20",
     "TimeLimit"        : "1",

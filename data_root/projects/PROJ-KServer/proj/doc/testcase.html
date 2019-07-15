@@ -1,3 +1,13 @@
 <html>
-    ... please edit %thisfile% to provide an information about a test case of the KServer project.
+A test case in the k-server problem is a list of servers and requests. Each individual request or server must then also contain information detailing it's location in the chosen arbitrary metric space. The series of requests must also be ordered chronologically by appearance.
+</br>
+</br>
+In this project a test case consists of two two dimensional fixed size arrays of integers one representing servers and the other requests.
+</br></br>
+<code> int[][] ks = new int[k][dimensions];</code> </br>
+<code> int[][] req = new int[r][dimensions];</code> </br></br>
+The first index represents the corresponding number of elements (requests or servers) while the second is equal to the number of dimensions in the metric space of the problem. For example if the problem space is a simple 2D plane we will have a dimensional vector of size 2 describing each position on the plane.
+</br>
+</br>
+The algorithm must in the end return a string detailing the order of request servicing. The string is constructed with the indexes of the servers in the initial array and seperated by commas. For example in a scenario with k = 2 and r = 3 a feasible solution would be "0,0,1" meaning the first server will service the first two requests and the last will be serviced by the second server. 
 </html>

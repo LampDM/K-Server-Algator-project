@@ -2,9 +2,9 @@
   "Algorithm" : {	
 
    "Name"           : "Greedy",
-   "ShortName"      : "algorithm_short_name",             
-   "Description"    : "algorithm_dascription",
-   "Author"         : "author_name",
+   "ShortName"      : "GDY",             
+   "Description"    : "Closest server services request.",
+   "Author"         : "Danijel Maraz",
    "Date"           : "07, 2019",
 
 

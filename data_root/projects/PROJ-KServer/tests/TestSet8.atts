@@ -3,7 +3,7 @@
     "Name"             : "TestSet8",
 
     "ShortName"        : "TS8",
-    "Description"      : "A test set testing 3D space performance.",
+    "Description"      : "2,185,11x11x11,RANDOM,RANDOM",
     "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",

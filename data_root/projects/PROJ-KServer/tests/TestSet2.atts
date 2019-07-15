@@ -3,7 +3,7 @@
     "Name"             : "TestSet2",
 
     "ShortName"        : "TS2",
-    "Description"      : "testset_description",
+    "Description"      : "k=2,r=185,11x11,RANDOM,RANDOM",
     "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",
