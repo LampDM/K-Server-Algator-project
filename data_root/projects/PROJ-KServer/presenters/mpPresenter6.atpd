@@ -43,11 +43,11 @@
     "name": "mpPresenter6", 
     "subchart": false, 
     "xAxis": "ID", 
-    "xAxisTitle": "x_mpPresenter6", 
+    "xAxisTitle": "Number of test", 
     "yAxes": [
       "*.p"
     ], 
-    "yAxisTitle": "y_mpPresenter6", 
+    "yAxisTitle": "p value", 
     "zoom": true
   }
 }

@@ -4,8 +4,8 @@
 
     "ShortName"        : "TS10",
     "Description"      : "A test set meant for measuring execution time performance.",
-    "N"                : "3",
-    "TestRepeat"       : "100",
+    "N"                : "12",
+    "TestRepeat"       : "20",
     "TimeLimit"        : "1",
 
     "TestSetDescHTML"  : "TestSet10.html"

@@ -6,8 +6,7 @@
     "Query": {
       "Algorithms": [
         "Greedy", 
-        "Harmonic", 
-        "WFA"
+        "Harmonic"
       ], 
       "ComputerID": "", 
       "Count": "0", 
@@ -27,11 +26,13 @@
         ""
       ], 
       "TestSets": [
-        "TestSet4"
+        "TestSet7", 
+        "TestSet8", 
+        "TestSet9"
       ]
     }, 
-    "ShortTitle": "st_mpPresenter3", 
-    "Title": "CORNER 4 servers", 
+    "ShortTitle": "1D7D", 
+    "Title": "1D to 7D", 
     "categoryLabels": false, 
     "graphType": "line", 
     "gridX": true, 
@@ -40,7 +41,7 @@
     "hasTable": true, 
     "logScale": false, 
     "manData": {}, 
-    "name": "mpPresenter3", 
+    "name": "mpPresenter9", 
     "subchart": false, 
     "xAxis": "ID", 
     "xAxisTitle": "Number of test", 

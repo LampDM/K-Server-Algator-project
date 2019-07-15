@@ -18,7 +18,7 @@
         ""
       ], 
       "Indicators": [
-        "p"
+        "*EM"
       ], 
       "Parameters": [
         "*"
@@ -27,11 +27,11 @@
         ""
       ], 
       "TestSets": [
-        "TestSet4"
+        "TestSet10"
       ]
     }, 
-    "ShortTitle": "st_mpPresenter3", 
-    "Title": "CORNER 4 servers", 
+    "ShortTitle": "ETI", 
+    "Title": "Execution time increase with more requests", 
     "categoryLabels": false, 
     "graphType": "line", 
     "gridX": true, 
@@ -40,14 +40,14 @@
     "hasTable": true, 
     "logScale": false, 
     "manData": {}, 
-    "name": "mpPresenter3", 
+    "name": "mpPresenter7", 
     "subchart": false, 
     "xAxis": "ID", 
     "xAxisTitle": "Number of test", 
     "yAxes": [
-      "*.p"
+      "*.Tmin"
     ], 
-    "yAxisTitle": "p value", 
+    "yAxisTitle": "Minimum time", 
     "zoom": true
   }
 }

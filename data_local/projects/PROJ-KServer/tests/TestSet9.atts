@@ -3,7 +3,7 @@
     "Name"             : "TestSet9",
 
     "ShortName"        : "TS9",
-    "Description"      : "A test set in 7D but this time using non random request appearance (WAVE, CORNER).",
+    "Description"      : "A test set measuring 7D performance.",
     "N"                : "12",
     "TestRepeat"       : "1",
     "TimeLimit"        : "1",
