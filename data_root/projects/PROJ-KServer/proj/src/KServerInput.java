@@ -18,8 +18,7 @@ public class KServerInput extends AbstractInput {
 
     @Override
     public String toString() {
-        
-        // TODO: provide a handy KServerInput string representation (include only important data)
-        return super.toString();
+        String s = String.format("k=%d,r=%d,dims=%d",this.ks.length,this.req.length,this.dimRange.length);
+        return s;
     }
 }

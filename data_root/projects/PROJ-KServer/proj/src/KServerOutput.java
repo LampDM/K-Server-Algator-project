@@ -20,8 +20,8 @@ public class KServerOutput extends AbstractOutput {
 
     @Override
     public String toString() {
-        // TODO: provide a handy KServerOutput string representation (include only important data)
-        return super.toString();
+        String s = String.format("k=%d,r=%d,%s",this.ks.length,this.req.length,this.solution);
+        return s;
     }
 
     @Override
